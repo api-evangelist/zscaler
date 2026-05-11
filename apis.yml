@@ -1,0 +1,69 @@
+aid: zscaler
+name: Zscaler
+description: >-
+  Zscaler is a cloud security platform delivering Zero Trust Exchange services
+  including Zscaler Internet Access (ZIA), Zscaler Private Access (ZPA), and
+  Zscaler Digital Experience (ZDX). Zscaler exposes REST APIs across its
+  product suite for configuration, policy management, and reporting,
+  authenticated via API keys, OAuth 2.0, or session-based authentication
+  depending on the product and cloud (zsapi).
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Cloud Security
+  - Zero Trust
+  - SASE
+  - Network Security
+  - SWG
+url: https://raw.githubusercontent.com/api-evangelist/zscaler/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: zscaler:zia-api
+    name: Zscaler Internet Access (ZIA) API
+    description: >-
+      REST API for managing Zscaler Internet Access policies, URL filtering,
+      cloud sandbox, DLP, location and user provisioning, and reporting on
+      web traffic and threats across the Zscaler Cloud platform.
+    humanURL: https://help.zscaler.com/zia/api
+    baseURL: https://zsapi.zscaler.net/api/v1
+    tags:
+      - Internet Access
+      - URL Filtering
+      - DLP
+      - Cloud Sandbox
+    properties:
+      - type: Documentation
+        url: https://help.zscaler.com/zia/api
+      - type: Authentication
+        url: https://help.zscaler.com/zia/getting-started-zia-api
+  - aid: zscaler:zpa-api
+    name: Zscaler Private Access (ZPA) API
+    description: >-
+      REST API for managing Zscaler Private Access (ZPA) configurations
+      including segment groups, application segments, connector groups, SCIM
+      provisioning, policies, and access logs.
+    humanURL: https://help.zscaler.com/zpa/api-reference
+    baseURL: https://config.private.zscaler.com/mgmtconfig/v1
+    tags:
+      - Private Access
+      - Zero Trust
+      - SCIM
+    properties:
+      - type: Documentation
+        url: https://help.zscaler.com/zpa/api-reference
+      - type: Authentication
+        url: https://help.zscaler.com/zpa/about-api-keys
+common:
+  - type: Website
+    url: https://www.zscaler.com/
+  - type: Documentation
+    url: https://help.zscaler.com/
+  - type: Pricing
+    url: https://www.zscaler.com/pricing-and-plans
+  - type: Sign Up
+    url: https://www.zscaler.com/products/get-started
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
