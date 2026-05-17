@@ -62,7 +62,7 @@ common:
     url: https://help.zscaler.com/
   - type: Pricing
     url: https://www.zscaler.com/pricing-and-plans
-  - type: Sign Up
+  - type: SignUp
     url: https://www.zscaler.com/products/get-started
 maintainers:
   - FN: Kin Lane
