@@ -56,6 +56,10 @@ apis:
       - type: Authentication
         url: https://help.zscaler.com/zpa/about-api-keys
 common:
+  - type: GitHubOrganization
+    url: https://github.com/zscaler
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/zscaler
   - type: Website
     url: https://www.zscaler.com/
   - type: Documentation
