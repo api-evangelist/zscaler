@@ -56,6 +56,10 @@ apis:
       - type: Authentication
         url: https://help.zscaler.com/zpa/about-api-keys
 common:
+  - type: VulnerabilityDisclosure
+    url: security/zscaler-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/zscaler-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/zscaler
   - type: LinkedIn
@@ -68,6 +72,8 @@ common:
     url: https://www.zscaler.com/pricing-and-plans
   - type: Signup
     url: https://www.zscaler.com/products/get-started
+  - url: https://www.zscaler.com/blogs
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
