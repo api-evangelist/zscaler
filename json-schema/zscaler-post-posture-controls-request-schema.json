@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/zscaler/main/json-schema/zscaler-post-posture-controls-request-schema.json",
+  "title": "PostPostureControlsRequest",
+  "x-generated": "2026-10-03",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/zscaler-openapi-generated.yml#/components/schemas/PostPostureControlsRequest",
+  "type": "object",
+  "properties": {
+    "filterSpec": {
+      "type": "object",
+      "description": "Filter specifications"
+    },
+    "orderSpecs": {
+      "type": "array",
+      "description": "Sorting specifications"
+    }
+  }
+}

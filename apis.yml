@@ -1,13 +1,13 @@
 aid: zscaler
+
 name: Zscaler
-description: >-
-  Zscaler is a cloud security platform delivering Zero Trust Exchange services
-  including Zscaler Internet Access (ZIA), Zscaler Private Access (ZPA), and
-  Zscaler Digital Experience (ZDX). Zscaler exposes REST APIs across its
-  product suite for configuration, policy management, and reporting,
-  authenticated via API keys, OAuth 2.0, or session-based authentication
-  depending on the product and cloud (zsapi).
+
+description: Zscaler is a cloud security platform delivering Zero Trust Exchange services including Zscaler Internet Access (ZIA), Zscaler Private
+  Access (ZPA), and Zscaler Digital Experience (ZDX). Zscaler exposes REST APIs across its product suite for configuration, policy management,
+  and reporting, authenticated via API keys, OAuth 2.0, or session-based authentication depending on the product and cloud (zsapi).
+
 type: Index
+
 deliveryModel:
   model: saas
   open_source: false
@@ -19,6 +19,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -30,72 +31,154 @@ accessModel:
   source: []
   generated: '2026-07-22'
   method: derived
+
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/zscaler.png
+
 tags:
-  - Cloud Security
-  - Zero Trust
-  - SASE
-  - Network Security
-  - SWG
+- Cloud Security
+- Zero Trust
+- SASE
+- Network Security
+- SWG
+
 url: https://raw.githubusercontent.com/api-evangelist/zscaler/refs/heads/main/apis.yml
+
 created: '2026-05-11'
+
 modified: '2026-05-11'
+
 specificationVersion: '0.23'
-apis:
-  - aid: zscaler:zia-api
-    name: Zscaler Internet Access (ZIA) API
-    description: >-
-      REST API for managing Zscaler Internet Access policies, URL filtering,
-      cloud sandbox, DLP, location and user provisioning, and reporting on
-      web traffic and threats across the Zscaler Cloud platform.
-    humanURL: https://help.zscaler.com/zia/api
-    baseURL: https://zsapi.zscaler.net/api/v1
-    tags:
-      - Internet Access
-      - URL Filtering
-      - DLP
-      - Cloud Sandbox
-    properties:
-      - type: Documentation
-        url: https://help.zscaler.com/zia/api
-      - type: Authentication
-        url: https://help.zscaler.com/zia/getting-started-zia-api
-  - aid: zscaler:zpa-api
-    name: Zscaler Private Access (ZPA) API
-    description: >-
-      REST API for managing Zscaler Private Access (ZPA) configurations
-      including segment groups, application segments, connector groups, SCIM
-      provisioning, policies, and access logs.
-    humanURL: https://help.zscaler.com/zpa/api-reference
-    baseURL: https://config.private.zscaler.com/mgmtconfig/v1
-    tags:
-      - Private Access
-      - Zero Trust
-      - SCIM
-    properties:
-      - type: Documentation
-        url: https://help.zscaler.com/zpa/api-reference
-      - type: Authentication
-        url: https://help.zscaler.com/zpa/about-api-keys
-common:
-  - type: VulnerabilityDisclosure
-    url: security/zscaler-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/zscaler-domain-security.yml
-  - type: GitHubOrganization
-    url: https://github.com/zscaler
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/zscaler
-  - type: Website
-    url: https://www.zscaler.com/
-  - type: Documentation
-    url: https://help.zscaler.com/
-  - type: Pricing
-    url: https://www.zscaler.com/pricing-and-plans
-  - type: Signup
-    url: https://www.zscaler.com/products/get-started
-  - url: https://www.zscaler.com/blogs
-    type: Blog
+
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
+common:
+- type: RateLimits
+  url: rate-limits/zscaler-rate-limits.yml
+- type: Plans
+  url: plans/zscaler-plans-pricing.yml
+- type: Spectral
+  url: rules/zscaler-rules.yml
+- type: JSONLD
+  url: json-ld/zscaler-context.jsonld
+- type: Vocabulary
+  url: vocabulary/zscaler-vocabulary.yml
+- type: DataModel
+  url: data-model/zscaler-data-model.yml
+- type: Conformance
+  url: conformance/zscaler-conformance.yml
+- type: LLMsTxt
+  url: llms/zscaler-llms.txt
+- type: WellKnown
+  url: well-known/zscaler-well-known.yml
+- type: Hosts
+  url: hosts/zscaler-hosts.yml
+- type: Vendors
+  url: vendors/zscaler-vendors.yml
+- type: Webhooks
+  url: https://www.zscaler.com/blogs/cybersecurity-best-practices/webhooks
+- type: TrustCenter
+  url: https://trust.zscaler.com/
+- type: Security
+  url: https://www.zscaler.com/security/vulnerability-disclosure-program
+- type: PrivacyPolicy
+  url: https://www.zscaler.com/blogs/company-news/privacy-vs-encryption
+- type: Leadership
+  url: https://www.zscaler.com/company/leadership
+- type: GettingStarted
+  url: https://help.zscaler.com/secure-ai-apps-infra/about-ai-red-teaming-onboarding-agent
+- type: VulnerabilityDisclosure
+  url: security/zscaler-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/zscaler-domain-security.yml
+- type: GitHubOrganization
+  url: https://github.com/zscaler
+- type: LinkedIn
+  url: https://www.linkedin.com/company/zscaler
+- type: Website
+  url: https://www.zscaler.com/
+- type: Documentation
+  url: https://help.zscaler.com/
+- type: Pricing
+  url: https://www.zscaler.com/pricing-and-plans
+- type: Signup
+  url: https://www.zscaler.com/products/get-started
+- url: https://www.zscaler.com/blogs
+  type: Blog
+
+apis:
+- aid: zscaler:zia-api
+  name: Zscaler Internet Access (ZIA) API
+  description: REST API for managing Zscaler Internet Access policies, URL filtering, cloud sandbox, DLP, location and user provisioning, and
+    reporting on web traffic and threats across the Zscaler Cloud platform.
+  humanURL: https://help.zscaler.com/zia/api
+  baseURL: https://zsapi.zscaler.net/api/v1
+  tags:
+  - Internet Access
+  - URL Filtering
+  - DLP
+  - Cloud Sandbox
+  properties:
+  - type: Documentation
+    url: https://help.zscaler.com/zia/api
+  - type: Authentication
+    url: https://help.zscaler.com/zia/getting-started-zia-api
+- aid: zscaler:zpa-api
+  name: Zscaler Private Access (ZPA) API
+  description: REST API for managing Zscaler Private Access (ZPA) configurations including segment groups, application segments, connector groups,
+    SCIM provisioning, policies, and access logs.
+  humanURL: https://help.zscaler.com/zpa/api-reference
+  baseURL: https://config.private.zscaler.com/mgmtconfig/v1
+  tags:
+  - Private Access
+  - Zero Trust
+  - SCIM
+  properties:
+  - type: Documentation
+    url: https://help.zscaler.com/zpa/api-reference
+  - type: Authentication
+    url: https://help.zscaler.com/zpa/about-api-keys
+- aid: zscaler:zscaler-api
+  name: Zscaler API
+  description: 'Zscaler API as documented publicly: 16 operations. Contract generated from the documentation by API Evangelist (2026-10-03); not
+
+    the provider''s own document.'
+  humanURL: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+  baseURL: https://api.apptotal.zscaler.com
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/zscaler-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/zscaler-put-posture-assets-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/zscaler-put-v1-posture-postureid-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/zscaler-get-app-views-list-response-schema.json
+  - type: JSONSchema
+    url: json-schema/zscaler-get-v1-app-views-list-response-schema.json
+  - type: JSONSchema
+    url: json-schema/zscaler-post-posture-controls-request-schema.json
+  - type: JSONSchema
+    url: json-schema/zscaler-post-v1-posture-controls-request-schema.json
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  method: derived
+  generated: '2026-10-03'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company publishes developer documentation but serves no machine-readable contract from it
+  evidence:
+  - url: https://config.private.zscaler.com/mcp
+    status: 401
+  - url: https://www.zscaler.com/
+    status: 200
+x-enrichment:
+  date: '2026-10-03'
+  status: enriched
+  artifacts_added: 21
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

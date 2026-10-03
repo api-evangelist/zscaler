@@ -1,0 +1,42 @@
+generated: '2026-10-03'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://help.zscaler.com/legacy-apis/understanding-rate-limiting-2
+sources:
+- https://help.zscaler.com/legacy-apis/understanding-rate-limiting-2
+- https://help.zscaler.com/legacy-apis/understanding-rate-limiting-3
+- https://help.zscaler.com/zpa/about-zdx-web-probe-rate-limiting
+- https://help.zscaler.com/legacy-apis/understanding-rate-limiting
+name: Zscaler rate limits
+limits:
+- name: Organization - General API Calls per Hour
+  limit_text: 100 API calls per hour
+  max: 100
+  window: hour
+  scope: Organization
+- name: Organization - /downloadDevices, /downloadServiceStatus, /downloadDisableReasons
+  limit_text: 3 API calls per day
+  max: 3
+  window: day
+  scope: Organization
+  endpoint: /downloadDevices, /downloadServiceStatus, /downloadDisableReasons
+- name: Public Service Edge - Web Probe Requests
+  limit_text: 50 web probe requests per second to the server for an individual Public Service Edge
+  max: 50
+  window: second
+  scope: Public Service Edge
+- name: Private Service Edge - Web Probe Requests
+  limit_text: 35 web probe requests per second to the server for an individual Private Service Edge
+  max: 35
+  window: second
+  scope: Private Service Edge
+headers:
+- RateLimit-Limit
+- RateLimit-Remaining
+- RateLimit-Reset
+- X-Rate-Limit-Remaining
+- X-Rate-Limit-Retry-After-Seconds
+exhaustion_status: 429
+retry_after: Retry-After header or body field when 429 is returned
+docs: https://help.zscaler.com/legacy-apis/understanding-rate-limiting-2
+note: 22 extracted row(s) were dropped because their quote was not on the page.

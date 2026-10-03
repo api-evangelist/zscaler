@@ -1,0 +1,648 @@
+openapi: 3.1.0
+info:
+  title: Zscaler API
+  version: '2026-10-03'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-03: 16 operation(s) read from 1 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Zscaler has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 16
+    pages-with-code: 0
+    pages-read: 1
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-03'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+servers:
+- url: https://api.apptotal.zscaler.com
+paths:
+  /app_views/list:
+    get:
+      operationId: get_app_views_list
+      tags:
+      - App Views
+      summary: Retrieves the list of custom views that you have configured in the 3rd-Party App Governance Admin Portal and includes all configurations
+        that define the custom view.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAppViewsListResponse'
+      x-evidence:
+        kind: documentation
+  /app_views/{appviewid}/{id}:
+    get:
+      operationId: get_app_views_appviewid_id
+      tags:
+      - App Views
+      summary: Retrieves the associated user accounts for a view ID.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      parameters:
+      - name: appviewid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAppViewsAppviewidIdResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 3 example path(s) differing only at id
+  /apps/search:
+    post:
+      operationId: post_apps_search
+      tags:
+      - Apps
+      summary: Searches for an app by name. Any app whose name contains the search term (appName) is returned.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      parameters:
+      - name: appName
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The app name
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Limit the number of results
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Page number
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostAppsSearchResponse'
+      x-evidence:
+        kind: documentation
+  /posture/assets:
+    get:
+      operationId: get_posture_assets
+      tags:
+      - Posture
+      summary: Returns a paginated list of asset control instances for a specific control ID in the 3rd-Party App Governance Posture tab.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      parameters:
+      - name: controlId
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The control ID to query
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Maximum number of rows to return
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Zero-based results page to return
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPostureAssetsResponse'
+      x-evidence:
+        kind: documentation
+  /posture/assets/status:
+    put:
+      operationId: put_posture_assets_status
+      tags:
+      - Posture
+      summary: Enables or disables multiple asset control instances simultaneously by their IDs in the 3rd-Party App Governance Posture tab.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutPostureAssetsStatusRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutPostureAssetsStatusResponse'
+      x-evidence:
+        kind: documentation
+  /posture/controls:
+    post:
+      operationId: post_posture_controls
+      tags:
+      - Posture
+      summary: Retrieves a paginated list of controls based on filter and sort criteria in the 3rd-Party App Governance Posture tab.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Maximum number of results to return (pagination limit)
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Page number for pagination
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPostureControlsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPostureControlsResponse'
+      x-evidence:
+        kind: documentation
+  /posture/controls/filters:
+    post:
+      operationId: post_posture_controls_filters
+      tags:
+      - Posture
+      summary: Returns a map of available filters and their display names in the 3rd-Party App Governance Posture tab.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPostureControlsFiltersResponse'
+      x-evidence:
+        kind: documentation
+  /posture/controls/status:
+    get:
+      operationId: get_posture_controls_status
+      tags:
+      - Posture
+      summary: Enables or disables multiple controls simultaneously by their IDs in the 3rd-Party App Governance Posture tab.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPostureControlsStatusResponse'
+      x-evidence:
+        kind: documentation
+  /v1/app_views/list:
+    get:
+      operationId: get_v1_app_views_list
+      tags:
+      - App Views
+      summary: Retrieves the list of custom views that you have configured.
+      description: Retrieves the list of custom views that you have configured in the 3rd-Party App Governance Admin Portal and includes all configurations
+        that define the custom view.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1AppViewsListResponse'
+      x-evidence:
+        kind: documentation
+  /v1/app_views/{appviewid}/{id}:
+    get:
+      operationId: get_v1_app_views_appviewid_id
+      tags:
+      - App Views
+      summary: Retrieves the associated user accounts for a view ID.
+      description: Retrieves the associated user accounts for a view ID.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      parameters:
+      - name: appviewid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1AppViewsAppviewidIdResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 3 example path(s) differing only at id
+  /v1/apps/app:
+    post:
+      operationId: post_v1_apps_app
+      tags:
+      - Apps
+      summary: Submits an app for analysis in the 3rd-Party App Governance Sandbox.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1AppsAppRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1AppsAppResponse'
+      x-evidence:
+        kind: documentation
+  /v1/apps/{appid}:
+    get:
+      operationId: get_v1_apps_appid
+      tags:
+      - Apps
+      summary: Searches the 3rd-Party App Governance App Catalog by either app ID or URL (i.e., a valid consent or marketplace link).
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      parameters:
+      - name: appid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: app_id
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The app identifier (e.g., OAuth client ID)
+      - name: url
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Valid consent link or marketplace link
+      - name: verbose
+        in: query
+        required: false
+        schema:
+          type: boolean
+        description: Return a verbose report including potentially heavy artifacts
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1AppsAppidResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at appId
+  /v1/posture/assets:
+    get:
+      operationId: get_v1_posture_assets
+      tags:
+      - Posture
+      summary: Returns a paginated list of asset control instances for a specific control ID.
+      description: Returns a paginated list of asset control instances for a specific control ID in the 3rd-Party App Governance Posture tab.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      parameters:
+      - name: controlId
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The control ID to query
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Maximum number of rows to return
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Zero-based results page to return
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1PostureAssetsResponse'
+      x-evidence:
+        kind: documentation
+  /v1/posture/controls:
+    post:
+      operationId: post_v1_posture_controls
+      tags:
+      - Posture
+      summary: Retrieves a paginated list of controls based on filter and sort criteria.
+      description: Retrieves a paginated list of controls based on filter and sort criteria in the 3rd-Party App Governance Posture tab.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Maximum number of results to return (pagination limit)
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Page number for pagination
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1PostureControlsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1PostureControlsResponse'
+      x-evidence:
+        kind: documentation
+  /v1/posture/controls/filters:
+    get:
+      operationId: get_v1_posture_controls_filters
+      tags:
+      - Posture
+      summary: Returns a map of available filters and their display names.
+      description: Returns a map of available filters and their display names in the 3rd-Party App Governance Posture tab.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1PostureControlsFiltersResponse'
+      x-evidence:
+        kind: documentation
+  /v1/posture/{postureid}/status:
+    put:
+      operationId: put_v1_posture_postureid_status
+      tags:
+      - Posture
+      summary: Enables or disables multiple asset control instances simultaneously by their IDs.
+      description: Enables or disables multiple asset control instances simultaneously by their IDs in the 3rd-Party App Governance Posture tab.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      parameters:
+      - name: postureid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutV1PosturePostureidStatusRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutV1PosturePostureidStatusResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at postureId
+components:
+  schemas:
+    GetAppViewsListResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        createdBy:
+          type: string
+        createdAt:
+          type: number
+        spec:
+          type: object
+    GetAppViewsAppviewidIdResponse:
+      type: object
+      properties:
+        AppAccountsMap:
+          type: object
+          description: A map where each key is an app ID and the value is an array of email addresses or null
+    PostAppsSearchResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        currentPage:
+          type: integer
+        data:
+          type: array
+    GetPostureAssetsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        currentPage:
+          type: integer
+        data:
+          type: array
+    PutPostureAssetsStatusRequest:
+      type: object
+      properties:
+        succeed:
+          type: integer
+          description: Number of entities successfully toggled
+        failed:
+          type: integer
+          description: Number of entities failed to toggle
+        filtered:
+          type: integer
+          description: Number of entities ignored/filtered out (not valid targets)
+    PutPostureAssetsStatusResponse:
+      type: object
+      properties:
+        succeed:
+          type: integer
+        failed:
+          type: integer
+        filtered:
+          type: integer
+    PostPostureControlsRequest:
+      type: object
+      properties:
+        filterSpec:
+          type: object
+          description: Filter specifications
+        orderSpecs:
+          type: array
+          description: Sorting specifications
+    PostPostureControlsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        currentPage:
+          type: integer
+        data:
+          type: array
+    PostPostureControlsFiltersResponse:
+      type: object
+      properties:
+        filters:
+          type: object
+    GetPostureControlsStatusResponse:
+      type: object
+      properties:
+        succeed:
+          type: integer
+        failed:
+          type: integer
+        filtered:
+          type: integer
+    GetV1AppViewsListResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        createdBy:
+          type: string
+        createdAt:
+          type: number
+        spec:
+          type: object
+    GetV1AppViewsAppviewidIdResponse:
+      type: object
+      properties:
+        AppAccountsMap:
+          type: object
+          description: A map where each key is an app ID and the value is an array of email addresses or null.
+    PostV1AppsAppRequest:
+      type: object
+      properties:
+        appId:
+          type: string
+          description: App identifier
+      required:
+      - appId
+    PostV1AppsAppResponse:
+      type: object
+      properties:
+        message:
+          type: string
+    GetV1AppsAppidResponse:
+      type: object
+      properties:
+        name:
+          type: string
+        publisher:
+          type: object
+        platform:
+          type: string
+        description:
+          type: string
+    GetV1PostureAssetsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        currentPage:
+          type: integer
+        data:
+          type: array
+    PostV1PostureControlsRequest:
+      type: object
+      properties:
+        filterSpec:
+          type: object
+          description: Filter specifications
+        orderSpecs:
+          type: array
+          description: Sorting specifications
+    PostV1PostureControlsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        currentPage:
+          type: integer
+        data:
+          type: array
+    GetV1PostureControlsFiltersResponse:
+      type: object
+      properties:
+        filters:
+          type: object
+    PutV1PosturePostureidStatusRequest:
+      type: object
+      properties:
+        succeed:
+          type: integer
+          description: Number of entities successfully toggled
+        failed:
+          type: integer
+          description: Number of entities failed to toggle
+        filtered:
+          type: integer
+          description: Number of entities ignored/filtered out (not valid targets)
+    PutV1PosturePostureidStatusResponse:
+      type: object
+      properties:
+        succeed:
+          type: integer
+        failed:
+          type: integer
+        filtered:
+          type: integer
+tags:
+- name: App Views
+- name: Apps
+- name: Posture

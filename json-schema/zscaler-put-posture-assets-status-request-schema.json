@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/zscaler/main/json-schema/zscaler-put-posture-assets-status-request-schema.json",
+  "title": "PutPostureAssetsStatusRequest",
+  "x-generated": "2026-10-03",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/zscaler-openapi-generated.yml#/components/schemas/PutPostureAssetsStatusRequest",
+  "type": "object",
+  "properties": {
+    "succeed": {
+      "type": "integer",
+      "description": "Number of entities successfully toggled"
+    },
+    "failed": {
+      "type": "integer",
+      "description": "Number of entities failed to toggle"
+    },
+    "filtered": {
+      "type": "integer",
+      "description": "Number of entities ignored/filtered out (not valid targets)"
+    }
+  }
+}

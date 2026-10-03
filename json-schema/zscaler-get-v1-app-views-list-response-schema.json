@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/zscaler/main/json-schema/zscaler-get-v1-app-views-list-response-schema.json",
+  "title": "GetV1AppViewsListResponse",
+  "x-generated": "2026-10-03",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/zscaler-openapi-generated.yml#/components/schemas/GetV1AppViewsListResponse",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "createdBy": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "number"
+    },
+    "spec": {
+      "type": "object"
+    }
+  }
+}
