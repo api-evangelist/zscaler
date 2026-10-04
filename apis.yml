@@ -110,8 +110,9 @@ common:
 apis:
 - aid: zscaler:zia-api
   name: Zscaler Internet Access (ZIA) API
-  description: REST API for managing Zscaler Internet Access policies, URL filtering, cloud sandbox, DLP, location and user provisioning, and
-    reporting on web traffic and threats across the Zscaler Cloud platform.
+  description: >-
+    REST API for managing Zscaler Internet Access policies, URL filtering, cloud sandbox, DLP, location
+    and user provisioning, and reporting on web traffic and threats across the Zscaler Cloud platform.
   humanURL: https://help.zscaler.com/zia/api
   baseURL: https://zsapi.zscaler.net/api/v1
   tags:
@@ -126,8 +127,9 @@ apis:
     url: https://help.zscaler.com/zia/getting-started-zia-api
 - aid: zscaler:zpa-api
   name: Zscaler Private Access (ZPA) API
-  description: REST API for managing Zscaler Private Access (ZPA) configurations including segment groups, application segments, connector groups,
-    SCIM provisioning, policies, and access logs.
+  description: >-
+    REST API for managing Zscaler Private Access (ZPA) configurations including segment groups, application
+    segments, connector groups, SCIM provisioning, policies, and access logs.
   humanURL: https://help.zscaler.com/zpa/api-reference
   baseURL: https://config.private.zscaler.com/mgmtconfig/v1
   tags:
@@ -139,17 +141,16 @@ apis:
     url: https://help.zscaler.com/zpa/api-reference
   - type: Authentication
     url: https://help.zscaler.com/zpa/about-api-keys
-- aid: zscaler:zscaler-api
-  name: Zscaler API
-  description: 'Zscaler API as documented publicly: 16 operations. Contract generated from the documentation by API Evangelist (2026-10-03); not
-
-    the provider''s own document.'
-  humanURL: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
-  baseURL: https://api.apptotal.zscaler.com
+- aid: zscaler:zscaler-app-views-api
+  name: Zscaler App Views API
+  description: The App Views API from Zscaler — 4 operation(s) for app views.
+  humanURL: https://help.zscaler.com/zia/api
+  baseURL: https://zsapi.zscaler.net/api/v1
+  tags:
+  - App Views
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/zscaler-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/zscaler-app-views-api-openapi.yml
   - type: JSONSchema
     url: json-schema/zscaler-put-posture-assets-status-request-schema.json
   - type: JSONSchema
@@ -162,7 +163,50 @@ apis:
     url: json-schema/zscaler-post-posture-controls-request-schema.json
   - type: JSONSchema
     url: json-schema/zscaler-post-v1-posture-controls-request-schema.json
-
+- aid: zscaler:zscaler-apps-api
+  name: Zscaler Apps API
+  description: The Apps API from Zscaler — 3 operation(s) for apps.
+  humanURL: https://help.zscaler.com/zia/api
+  baseURL: https://zsapi.zscaler.net/api/v1
+  tags:
+  - Apps
+  properties:
+  - type: OpenAPI
+    url: openapi/zscaler-apps-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/zscaler-put-posture-assets-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/zscaler-put-v1-posture-postureid-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/zscaler-get-app-views-list-response-schema.json
+  - type: JSONSchema
+    url: json-schema/zscaler-get-v1-app-views-list-response-schema.json
+  - type: JSONSchema
+    url: json-schema/zscaler-post-posture-controls-request-schema.json
+  - type: JSONSchema
+    url: json-schema/zscaler-post-v1-posture-controls-request-schema.json
+- aid: zscaler:zscaler-posture-api
+  name: Zscaler Posture API
+  description: The Posture API from Zscaler — 9 operation(s) for posture.
+  humanURL: https://help.zscaler.com/zia/api
+  baseURL: https://zsapi.zscaler.net/api/v1
+  tags:
+  - Posture
+  properties:
+  - type: OpenAPI
+    url: openapi/zscaler-posture-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/zscaler-put-posture-assets-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/zscaler-put-v1-posture-postureid-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/zscaler-get-app-views-list-response-schema.json
+  - type: JSONSchema
+    url: json-schema/zscaler-get-v1-app-views-list-response-schema.json
+  - type: JSONSchema
+    url: json-schema/zscaler-post-posture-controls-request-schema.json
+  - type: JSONSchema
+    url: json-schema/zscaler-post-v1-posture-controls-request-schema.json
 x-coverage:
   state: unreadable
   reason: no-machine-readable-spec

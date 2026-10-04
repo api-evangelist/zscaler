@@ -1,0 +1,383 @@
+openapi: 3.2.0
+info:
+  title: Zscaler Posture API
+  version: '2026-10-03'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-03: 16 operation(s) read from 1 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Zscaler has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 16
+    pages-with-code: 0
+    pages-read: 1
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-03'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+servers:
+- url: https://api.apptotal.zscaler.com
+tags:
+- name: Posture
+paths:
+  /posture/assets:
+    get:
+      operationId: get_posture_assets
+      tags:
+      - Posture
+      summary: Returns a paginated list of asset control instances for a specific control ID…
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      parameters:
+      - name: controlId
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The control ID to query
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Maximum number of rows to return
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Zero-based results page to return
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPostureAssetsResponse'
+      x-evidence:
+        kind: documentation
+  /posture/assets/status:
+    put:
+      operationId: put_posture_assets_status
+      tags:
+      - Posture
+      summary: Enables or disables multiple asset control instances simultaneously by their…
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutPostureAssetsStatusRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutPostureAssetsStatusResponse'
+      x-evidence:
+        kind: documentation
+  /posture/controls:
+    post:
+      operationId: post_posture_controls
+      tags:
+      - Posture
+      summary: Retrieves a paginated list of controls based on filter and sort criteria in the…
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Maximum number of results to return (pagination limit)
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Page number for pagination
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPostureControlsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPostureControlsResponse'
+      x-evidence:
+        kind: documentation
+  /posture/controls/filters:
+    post:
+      operationId: post_posture_controls_filters
+      tags:
+      - Posture
+      summary: Returns a map of available filters and their display names in the 3rd-Party App…
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPostureControlsFiltersResponse'
+      x-evidence:
+        kind: documentation
+  /posture/controls/status:
+    get:
+      operationId: get_posture_controls_status
+      tags:
+      - Posture
+      summary: Enables or disables multiple controls simultaneously by their IDs in the…
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPostureControlsStatusResponse'
+      x-evidence:
+        kind: documentation
+  /v1/posture/assets:
+    get:
+      operationId: get_v1_posture_assets
+      tags:
+      - Posture
+      summary: Returns a paginated list of asset control instances for a specific control ID
+      description: Returns a paginated list of asset control instances for a specific control ID in the 3rd-Party App Governance Posture tab.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      parameters:
+      - name: controlId
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The control ID to query
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Maximum number of rows to return
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Zero-based results page to return
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1PostureAssetsResponse'
+      x-evidence:
+        kind: documentation
+  /v1/posture/controls:
+    post:
+      operationId: post_v1_posture_controls
+      tags:
+      - Posture
+      summary: Retrieves a paginated list of controls based on filter and sort criteria
+      description: Retrieves a paginated list of controls based on filter and sort criteria in the 3rd-Party App Governance Posture tab.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Maximum number of results to return (pagination limit)
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Page number for pagination
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1PostureControlsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1PostureControlsResponse'
+      x-evidence:
+        kind: documentation
+  /v1/posture/controls/filters:
+    get:
+      operationId: get_v1_posture_controls_filters
+      tags:
+      - Posture
+      summary: Returns a map of available filters and their display names
+      description: Returns a map of available filters and their display names in the 3rd-Party App Governance Posture tab.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1PostureControlsFiltersResponse'
+      x-evidence:
+        kind: documentation
+  /v1/posture/{postureid}/status:
+    put:
+      operationId: put_v1_posture_postureid_status
+      tags:
+      - Posture
+      summary: Enables or disables multiple asset control instances simultaneously by their IDs
+      description: Enables or disables multiple asset control instances simultaneously by their IDs in the 3rd-Party App Governance Posture tab.
+      x-source: https://help.zscaler.com/legacy-apis/3rd-party-app-governance-api
+      parameters:
+      - name: postureid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutV1PosturePostureidStatusRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutV1PosturePostureidStatusResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at postureId
+components:
+  schemas:
+    PutPostureAssetsStatusResponse:
+      type: object
+      properties:
+        succeed:
+          type: integer
+        failed:
+          type: integer
+        filtered:
+          type: integer
+    PostPostureControlsRequest:
+      type: object
+      properties:
+        filterSpec:
+          type: object
+          description: Filter specifications
+        orderSpecs:
+          type: array
+          description: Sorting specifications
+    PostPostureControlsFiltersResponse:
+      type: object
+      properties:
+        filters:
+          type: object
+    GetV1PostureControlsFiltersResponse:
+      type: object
+      properties:
+        filters:
+          type: object
+    PutPostureAssetsStatusRequest:
+      type: object
+      properties:
+        succeed:
+          type: integer
+          description: Number of entities successfully toggled
+        failed:
+          type: integer
+          description: Number of entities failed to toggle
+        filtered:
+          type: integer
+          description: Number of entities ignored/filtered out (not valid targets)
+    PutV1PosturePostureidStatusResponse:
+      type: object
+      properties:
+        succeed:
+          type: integer
+        failed:
+          type: integer
+        filtered:
+          type: integer
+    PostV1PostureControlsRequest:
+      type: object
+      properties:
+        filterSpec:
+          type: object
+          description: Filter specifications
+        orderSpecs:
+          type: array
+          description: Sorting specifications
+    PostV1PostureControlsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        currentPage:
+          type: integer
+        data:
+          type: array
+    PostPostureControlsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        currentPage:
+          type: integer
+        data:
+          type: array
+    PutV1PosturePostureidStatusRequest:
+      type: object
+      properties:
+        succeed:
+          type: integer
+          description: Number of entities successfully toggled
+        failed:
+          type: integer
+          description: Number of entities failed to toggle
+        filtered:
+          type: integer
+          description: Number of entities ignored/filtered out (not valid targets)
+    GetPostureAssetsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        currentPage:
+          type: integer
+        data:
+          type: array
+    GetV1PostureAssetsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        currentPage:
+          type: integer
+        data:
+          type: array
+    GetPostureControlsStatusResponse:
+      type: object
+      properties:
+        succeed:
+          type: integer
+        failed:
+          type: integer
+        filtered:
+          type: integer

@@ -1,0 +1,20 @@
+{
+  "provider": "zscaler",
+  "sources": [
+    "_ae-authored/zscaler-openapi-generated.yml"
+  ],
+  "outputs": [
+    "zscaler-app-views-api-openapi.yml",
+    "zscaler-apps-api-openapi.yml",
+    "zscaler-posture-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "zscaler-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+3 apis, 5 total)"
+  ],
+  "skipped": []
+}
