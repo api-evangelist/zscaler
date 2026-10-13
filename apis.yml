@@ -54,6 +54,9 @@ maintainers:
   email: kin@apievangelist.com
 
 common:
+- type: CapabilityMap
+  url: capabilities/zscaler-capability-edges.yml
+  name: Zscaler Business Capability Map
 - type: RateLimits
   url: rate-limits/zscaler-rate-limits.yml
 - type: Plans
