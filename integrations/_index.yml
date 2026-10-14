@@ -27,3 +27,15 @@
   relationship: distribution-channel
   status: not-a-workflow
   arazzo: null
+- slug: zscaler-github-marketplace-apps
+  label: GitHub Marketplace (apps)
+  partner: github
+  partner_name: GitHub Marketplace (apps)
+  type: marketplace
+  marketplace: github-apps
+  channel: partner-built
+  evidence: https://github.com/marketplace/zscaler-iac-scan
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
