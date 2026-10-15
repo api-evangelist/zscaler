@@ -89,3 +89,112 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: zscaler-n8n
+  label: n8n
+  partner: n8n
+  partner_name: n8n
+  type: marketplace
+  marketplace: n8n-community
+  channel: open-source-node
+  evidence: https://www.npmjs.com/package/@bdzscaler/n8n-nodes-aiguard
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: n8n community nodes (npm keyword n8n-community-node-package)
+    spec_file: null
+    role: ipaas-connector:n8n-community
+    registered_name: '@bdzscaler/n8n-nodes-aiguard'
+    matched_domain: zscaler.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    package: '@bdzscaler/n8n-nodes-aiguard'
+    version: 0.1.3
+    published: '2026-04-14T16:43:46.788Z'
+    matched_on: publisher-email
+    builder: provider (package published from the provider's own domain)
+  status: pending-generation
+  arazzo: null
+- slug: zscaler-fedramp
+  label: FedRAMP
+  partner_name: FedRAMP
+  category: FedRAMP authorization
+  type: contract
+  channel: regulator-register
+  evidence: https://marketplace.fedramp.gov/products/FR2227062482
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: FedRAMP Marketplace data (github.com/18F/fedramp-data data/data.json @4b73d9247f)
+    standard: FedRAMP
+    spec_file: null
+    role: fedramp-authorized
+    registered_name: Zscaler, Inc.
+    register_id: FR2227062482
+    matched_domain: zscaler.com
+    matched_by: domain
+    domain_source: website
+    designations:
+    - Compliant
+    packages:
+    - Zscaler Internet Access – Government (Secure Web Gateway – vTIC)
+    - Zscaler Internet Access – Government (Secure Web Gateway – vTIC) - High
+    - Zscaler Private Access – Government (Zero Trust Exchange – VPN Replacement)
+    - Zscaler Private Access – Government (Zero Trust Networking – VPN Replacement)
+    service_models:
+    - SaaS
+    paths:
+    - Agency
+    - JAB
+    signal_note: certified_products = one entry per AUTHORIZED impact level, never per package; packages, service
+      models, paths and leveraging agencies are context, never counted. The register lists current designations
+      only (revoked / expired are removed), so lapsed is always false
+    detected_by: sweep-gov-cloud.py
+    detected: '2026-10-15'
+    certified_products:
+    - product: FedRAMP Moderate
+      impact_level: Moderate
+      lapsed: false
+      latest_authorization: '2022-06-06'
+    - product: FedRAMP High
+      impact_level: High
+      lapsed: false
+      latest_authorization: '2022-06-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: zscaler-govramp
+  label: GovRAMP
+  partner_name: GovRAMP
+  category: GovRAMP authorization
+  type: register
+  channel: standard-directory
+  evidence: https://govramp.org/program-participants
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: GovRAMP Program Participants (govramp.org/program-participants)
+    standard: GovRAMP
+    spec_file: null
+    role: govramp-authorized
+    registered_name: Zscaler
+    register_id: SR21001
+    matched_domain: zscaler.com
+    matched_by: domain
+    domain_source: contact-email
+    statuses:
+    - Authorized
+    offerings:
+    - Zscaler Internet Access - Government (ZIA Gov)
+    - Zscaler Private Access
+    signal_note: certified_products = one entry per AUTHORIZED impact level (Authorized / Provisionally Authorized),
+      never per offering; Progressing / Pending / Ready / Core are participation only
+    detected_by: sweep-gov-cloud.py
+    detected: '2026-10-15'
+    certified_products:
+    - product: GovRAMP Moderate
+      impact_level: Moderate
+      lapsed: false
+      latest_authorization: '2024-04-18'
+  status: not-a-workflow
+  arazzo: null
