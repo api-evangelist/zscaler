@@ -113,6 +113,19 @@ paths:
         collapsed_from: 3 example path(s) differing only at id
 components:
   schemas:
+    GetV1AppViewsListResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        createdBy:
+          type: string
+        createdAt:
+          type: number
+        spec:
+          type: object
     GetAppViewsAppviewidIdResponse:
       type: object
       properties:
@@ -138,16 +151,3 @@ components:
         AppAccountsMap:
           type: object
           description: A map where each key is an app ID and the value is an array of email addresses or null.
-    GetV1AppViewsListResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        createdBy:
-          type: string
-        createdAt:
-          type: number
-        spec:
-          type: object

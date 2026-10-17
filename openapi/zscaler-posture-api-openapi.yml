@@ -266,34 +266,6 @@ paths:
         collapsed_from: 2 example path(s) differing only at postureId
 components:
   schemas:
-    PutPostureAssetsStatusResponse:
-      type: object
-      properties:
-        succeed:
-          type: integer
-        failed:
-          type: integer
-        filtered:
-          type: integer
-    PostPostureControlsRequest:
-      type: object
-      properties:
-        filterSpec:
-          type: object
-          description: Filter specifications
-        orderSpecs:
-          type: array
-          description: Sorting specifications
-    PostPostureControlsFiltersResponse:
-      type: object
-      properties:
-        filters:
-          type: object
-    GetV1PostureControlsFiltersResponse:
-      type: object
-      properties:
-        filters:
-          type: object
     PutPostureAssetsStatusRequest:
       type: object
       properties:
@@ -306,24 +278,6 @@ components:
         filtered:
           type: integer
           description: Number of entities ignored/filtered out (not valid targets)
-    PutV1PosturePostureidStatusResponse:
-      type: object
-      properties:
-        succeed:
-          type: integer
-        failed:
-          type: integer
-        filtered:
-          type: integer
-    PostV1PostureControlsRequest:
-      type: object
-      properties:
-        filterSpec:
-          type: object
-          description: Filter specifications
-        orderSpecs:
-          type: array
-          description: Sorting specifications
     PostV1PostureControlsResponse:
       type: object
       properties:
@@ -333,15 +287,15 @@ components:
           type: integer
         data:
           type: array
-    PostPostureControlsResponse:
+    PostV1PostureControlsRequest:
       type: object
       properties:
-        count:
-          type: integer
-        currentPage:
-          type: integer
-        data:
+        filterSpec:
+          type: object
+          description: Filter specifications
+        orderSpecs:
           type: array
+          description: Sorting specifications
     PutV1PosturePostureidStatusRequest:
       type: object
       properties:
@@ -354,6 +308,15 @@ components:
         filtered:
           type: integer
           description: Number of entities ignored/filtered out (not valid targets)
+    PostPostureControlsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        currentPage:
+          type: integer
+        data:
+          type: array
     GetPostureAssetsResponse:
       type: object
       properties:
@@ -363,15 +326,20 @@ components:
           type: integer
         data:
           type: array
-    GetV1PostureAssetsResponse:
+    PutPostureAssetsStatusResponse:
       type: object
       properties:
-        count:
+        succeed:
           type: integer
-        currentPage:
+        failed:
           type: integer
-        data:
-          type: array
+        filtered:
+          type: integer
+    GetV1PostureControlsFiltersResponse:
+      type: object
+      properties:
+        filters:
+          type: object
     GetPostureControlsStatusResponse:
       type: object
       properties:
@@ -381,3 +349,35 @@ components:
           type: integer
         filtered:
           type: integer
+    GetV1PostureAssetsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        currentPage:
+          type: integer
+        data:
+          type: array
+    PostPostureControlsRequest:
+      type: object
+      properties:
+        filterSpec:
+          type: object
+          description: Filter specifications
+        orderSpecs:
+          type: array
+          description: Sorting specifications
+    PutV1PosturePostureidStatusResponse:
+      type: object
+      properties:
+        succeed:
+          type: integer
+        failed:
+          type: integer
+        filtered:
+          type: integer
+    PostPostureControlsFiltersResponse:
+      type: object
+      properties:
+        filters:
+          type: object

@@ -121,6 +121,22 @@ paths:
         collapsed_from: 2 example path(s) differing only at appId
 components:
   schemas:
+    GetV1AppsAppidResponse:
+      type: object
+      properties:
+        name:
+          type: string
+        publisher:
+          type: object
+        platform:
+          type: string
+        description:
+          type: string
+    PostV1AppsAppResponse:
+      type: object
+      properties:
+        message:
+          type: string
     PostV1AppsAppRequest:
       type: object
       properties:
@@ -138,19 +154,3 @@ components:
           type: integer
         data:
           type: array
-    GetV1AppsAppidResponse:
-      type: object
-      properties:
-        name:
-          type: string
-        publisher:
-          type: object
-        platform:
-          type: string
-        description:
-          type: string
-    PostV1AppsAppResponse:
-      type: object
-      properties:
-        message:
-          type: string
