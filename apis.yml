@@ -172,6 +172,8 @@ apis:
   humanURL: https://help.zscaler.com/zia/api
   baseURL: https://zsapi.zscaler.net/api/v1
   tags:
+  - Application
+  tags_raw:
   - Apps
   properties:
   - type: OpenAPI
