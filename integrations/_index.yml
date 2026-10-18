@@ -198,3 +198,29 @@
       latest_authorization: '2024-04-18'
   status: not-a-workflow
   arazzo: null
+- slug: zscaler-slack-own
+  label: Slack (own)
+  partner: slack
+  partner_name: Slack (own)
+  category: Slack app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://slack.com/marketplace/A022CHL7UJH-zscaler-saas-connector-01
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zscaler-zoom-own
+  label: Zoom (own)
+  partner: zoom
+  partner_name: Zoom (own)
+  category: Zoom app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoom.us/apps/E2WotlutQpWtw2kDbKNEfg
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null

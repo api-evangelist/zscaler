@@ -12,6 +12,8 @@ checked:
 - microsoft-sentinel/integrations/microsoft-sentinel-integration-edges.yml
 - okta/integrations/okta-integration-edges.yml
 - ping-identity/integrations/ping-identity-integration-edges.yml
+- slack/integrations/slack-integration-edges.yml
+- zoom/integrations/zoom-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: AWS Marketplace
@@ -326,5 +328,39 @@ edges:
       latest_authorization: '2024-04-18'
   detected_by: sweep-gov-cloud.py
   first_seen: '2026-10-15'
+- partner_name: Slack (own)
+  partner: slack
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://slack.com/marketplace/A022CHL7UJH-zscaler-saas-connector-01
+  mirror_of: slack/integrations/slack-integration-edges.yml
+  apps:
+  - Zscaler SaaS Connector 01
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Slack app
+- partner_name: Zoom (own)
+  partner: zoom
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.zoom.us/apps/E2WotlutQpWtw2kDbKNEfg
+  mirror_of: zoom/integrations/zoom-integration-edges.yml
+  apps:
+  - Zscaler Digital Experience
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Zoom app
 source:
 - https://github.com/marketplace?type=apps
