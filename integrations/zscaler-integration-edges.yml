@@ -24,6 +24,8 @@ checked:
 - https://cloudsecurityalliance.org/membership/current
 - https://fidoalliance.org/certification/fido-certified-products/
 - https://www.cisa.gov/securebydesign/pledge/secure-design-pledge-signers
+- pulumi/integrations/pulumi-integration-edges.yml
+- terraform/integrations/terraform-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: AWS Marketplace
@@ -207,6 +209,99 @@ edges:
       latest_authorization: '2024-04-18'
   detected_by: sweep-gov-cloud.py
   first_seen: '2026-10-15'
+- partner_name: Cloud Security Alliance STAR Registry
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://cloudsecurityalliance.org/star/registry/zscaler/services/zscaler
+  category: Cloud security assurance
+  contract_reference:
+    register: CSA STAR Registry (cloudsecurityalliance.org/star/registry)
+    spec_file: null
+    standard: CSA STAR
+    role: star-level-2
+    registered_name: Zscaler
+    registry_id: zscaler
+    service_url: http://www.zscaler.com
+    matched_domain: zscaler.com
+    matched_by: domain
+    identity_source: the service URL the organisation filed on its STAR listing (no lookup)
+    levels:
+    - STAR Level 1
+    - STAR Level 2
+    certified_products:
+    - product: STAR Certification
+      lapsed: false
+      latest: '2025-07-29'
+    signal_note: STAR Level 1 (CAIQ self-assessment) = participation; certified_products = one entry per STAR Level
+      2 / STAR for AI Level 2 assessment TYPE (third-party certification, attestation, C-STAR, ValidAIted); lapsed
+      = every instance marked (Deprecated) by the registry; service counts never recorded
+    detected_by: sweep-compliance-assurance.py
+    detected: '2026-10-20'
+  detected_by: sweep-compliance-assurance.py
+  first_seen: '2026-10-20'
+- partner_name: PeeringDB (interconnection register)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.peeringdb.com/net/4048
+  category: network interconnection register
+  contract_reference:
+    register: PeeringDB (peeringdb.com/api net, ix, fac, org)
+    standard: null
+    spec_file: null
+    role: peeringdb-network
+    registered_name: Zscaler
+    register_id: https://www.peeringdb.com/net/4048
+    matched_domain: zscaler.com
+    matched_by: domain
+    asns:
+    - 22616
+    - 53813
+    - 62044
+    info_types:
+    - Network Services
+    ix_presence: 33
+    exchanges_operated: []
+    facilities_operated: 0
+    signal_note: 'participation only: PeeringDB is self-registered by network operators; ASNs, IX presence and facility
+      counts are context, never counted'
+    detected_by: sweep-network-edge.py
+    detected: '2026-10-20'
+  detected_by: sweep-network-edge.py
+  first_seen: '2026-10-20'
+- partner_name: CISA Secure by Design Pledge
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.cisa.gov/securebydesign/pledge/secure-design-pledge-signers
+  category: secure-by-design software pledge
+  contract_reference:
+    register: CISA Secure by Design Pledge signers (cisa.gov/securebydesign/pledge)
+    standard: 'CISA Secure by Design Pledge (seven goals: MFA, default passwords, vulnerability classes, patches,
+      disclosure policy, CVEs, evidence of intrusions)'
+    spec_file: null
+    role: secure-by-design-pledge-signer
+    registered_name: Zscaler
+    matched_domain: zscaler.com
+    matched_by: domain
+    signal_note: 'participation only: a voluntary public pledge listed by CISA; not an audit or conformance result
+      (no certified_products, no tier)'
+    detected_by: sweep-cloud-security-star.py
+    detected: '2026-10-20'
+    identity: wikidata Q8074786 'Zscaler' P856 http://www.zscaler.com/
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+  detected_by: sweep-cloud-security-star.py
+  first_seen: '2026-10-20'
 - partner_name: CrowdStrike (own)
   partner: crowdstrike
   partner_match: mirror
@@ -387,98 +482,48 @@ edges:
   detected: '2026-10-18'
   detected_by: mirror-platform-listings.py
   category: Zoom app
-- partner_name: Cloud Security Alliance STAR Registry
-  partner: null
-  partner_match: register
-  type: register
-  channel: standard-directory
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://cloudsecurityalliance.org/star/registry/zscaler/services/zscaler
-  category: Cloud security assurance
-  contract_reference:
-    register: CSA STAR Registry (cloudsecurityalliance.org/star/registry)
-    spec_file: null
-    standard: CSA STAR
-    role: star-level-2
-    registered_name: Zscaler
-    registry_id: zscaler
-    service_url: http://www.zscaler.com
-    matched_domain: zscaler.com
-    matched_by: domain
-    identity_source: the service URL the organisation filed on its STAR listing (no lookup)
-    levels:
-    - STAR Level 1
-    - STAR Level 2
-    certified_products:
-    - product: STAR Certification
-      lapsed: false
-      latest: '2025-07-29'
-    signal_note: STAR Level 1 (CAIQ self-assessment) = participation; certified_products = one entry per STAR Level
-      2 / STAR for AI Level 2 assessment TYPE (third-party certification, attestation, C-STAR, ValidAIted); lapsed
-      = every instance marked (Deprecated) by the registry; service counts never recorded
-    detected_by: sweep-compliance-assurance.py
-    detected: '2026-10-20'
-  detected_by: sweep-compliance-assurance.py
-  first_seen: '2026-10-20'
-- partner_name: PeeringDB (interconnection register)
-  partner: null
-  partner_match: register
-  type: register
-  channel: standard-directory
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://www.peeringdb.com/net/4048
-  category: network interconnection register
-  contract_reference:
-    register: PeeringDB (peeringdb.com/api net, ix, fac, org)
-    standard: null
-    spec_file: null
-    role: peeringdb-network
-    registered_name: Zscaler
-    register_id: https://www.peeringdb.com/net/4048
-    matched_domain: zscaler.com
-    matched_by: domain
-    asns:
-    - 22616
-    - 53813
-    - 62044
-    info_types:
-    - Network Services
-    ix_presence: 33
-    exchanges_operated: []
-    facilities_operated: 0
-    signal_note: 'participation only: PeeringDB is self-registered by network operators; ASNs, IX presence and facility
-      counts are context, never counted'
-    detected_by: sweep-network-edge.py
-    detected: '2026-10-20'
-  detected_by: sweep-network-edge.py
-  first_seen: '2026-10-20'
-- partner_name: CISA Secure by Design Pledge
-  partner: null
-  partner_match: register
-  type: register
-  channel: standard-directory
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://www.cisa.gov/securebydesign/pledge/secure-design-pledge-signers
-  category: secure-by-design software pledge
-  contract_reference:
-    register: CISA Secure by Design Pledge signers (cisa.gov/securebydesign/pledge)
-    standard: 'CISA Secure by Design Pledge (seven goals: MFA, default passwords, vulnerability classes, patches,
-      disclosure policy, CVEs, evidence of intrusions)'
-    spec_file: null
-    role: secure-by-design-pledge-signer
-    registered_name: Zscaler
-    matched_domain: zscaler.com
-    matched_by: domain
-    signal_note: 'participation only: a voluntary public pledge listed by CISA; not an audit or conformance result
-      (no certified_products, no tier)'
-    detected_by: sweep-cloud-security-star.py
-    detected: '2026-10-20'
-    identity: wikidata Q8074786 'Zscaler' P856 http://www.zscaler.com/
-    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
-  detected_by: sweep-cloud-security-star.py
-  first_seen: '2026-10-20'
+- partner_name: Pulumi (pulumi-registry)
+  partner: pulumi
+  partner_match: mirror
+  mirror_match: register
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: pulumi-registry
+  evidence: https://www.pulumi.com/registry/packages/zia/
+  mirror_of: pulumi/integrations/pulumi-integration-edges.yml
+  apps:
+  - pulumi-resource-zia
+  - Zscaler Private Access
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: infrastructure-as-code provider registry listing
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Terraform (terraform-registry)
+  partner: terraform
+  partner_match: mirror
+  mirror_match: register
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: terraform-registry
+  evidence: https://registry.terraform.io/providers/zscaler/zpa
+  mirror_of: terraform/integrations/terraform-integration-edges.yml
+  apps:
+  - zscaler/zpa
+  - zscaler/zia
+  - zscaler/ztc
+  - zscaler/zcc
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: infrastructure-as-code provider registry listing
+  badges:
+  - Verified publisher (Terraform partner tier)
+  - Verified publisher (GitHub domain-verified organization)
 source:
 - https://github.com/marketplace?type=apps
