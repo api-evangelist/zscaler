@@ -241,120 +241,6 @@
     identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
   status: not-a-workflow
   arazzo: null
-- slug: zscaler-crowdstrike-own
-  label: CrowdStrike (own)
-  partner: crowdstrike
-  partner_name: CrowdStrike (own)
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.crowdstrike.com/listings/zscaler-falcon-foundry-application/
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zscaler-microsoft-sentinel-own
-  label: Microsoft Sentinel (own)
-  partner: microsoft-sentinel
-  partner_name: Microsoft Sentinel (own)
-  category: Security - Threat Protection
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://github.com/Azure/Azure-Sentinel/tree/master/Solutions/Zscaler%20Internet%20Access
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zscaler-n8n-n8n-community
-  label: n8n (n8n-community)
-  partner: n8n
-  partner_name: n8n (n8n-community)
-  type: marketplace
-  marketplace: n8n-community
-  channel: partner-built
-  evidence: https://www.npmjs.com/package/@bdzscaler/n8n-nodes-aiguard
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zscaler-okta-own
-  label: Okta (own)
-  partner: okta
-  partner_name: Okta (own)
-  category: Single Sign-On
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://www.okta.com/integrations/zscalerbyz/
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zscaler-ping-identity-own
-  label: Ping Identity (own)
-  partner: ping-identity
-  partner_name: Ping Identity (own)
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.pingone.com/item/zscaler-zidentity-integration-with-pingfederate-oidc
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zscaler-slack-own
-  label: Slack (own)
-  partner: slack
-  partner_name: Slack (own)
-  category: Slack app
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://slack.com/marketplace/A022CHL7UJH-zscaler-saas-connector-01
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zscaler-zoom-own
-  label: Zoom (own)
-  partner: zoom
-  partner_name: Zoom (own)
-  category: Zoom app
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.zoom.us/apps/E2WotlutQpWtw2kDbKNEfg
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zscaler-pulumi-pulumi-registry
-  label: Pulumi (pulumi-registry)
-  partner: pulumi
-  partner_name: Pulumi (pulumi-registry)
-  category: infrastructure-as-code provider registry listing
-  type: marketplace
-  marketplace: pulumi-registry
-  channel: partner-built
-  evidence: https://www.pulumi.com/registry/packages/zia/
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zscaler-terraform-terraform-registry
-  label: Terraform (terraform-registry)
-  partner: terraform
-  partner_name: Terraform (terraform-registry)
-  category: infrastructure-as-code provider registry listing
-  type: marketplace
-  marketplace: terraform-registry
-  channel: partner-built
-  evidence: https://registry.terraform.io/providers/zscaler/zpa
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
 - slug: zscaler-ismap
   label: ISMAP
   partner_name: ISMAP
@@ -475,5 +361,219 @@
       validated: '2025-10-14'
     vendor_country: USA
     identity_source: register website (CMVP certificate Vendor panel)
+  status: not-a-workflow
+  arazzo: null
+- slug: zscaler-tx-ramp
+  label: TX-RAMP
+  partner_name: TX-RAMP
+  category: Texas state cloud security certification (TX-RAMP)
+  type: contract
+  channel: regulator-register
+  evidence: https://dir.texas.gov/resource-library-item/tx-ramp-certified-cloud-products
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: TX-RAMP Certified Cloud Products (Texas DIR)
+    standard: TX-RAMP
+    spec_file: null
+    role: tx-ramp-certified
+    register_file: https://dir.texas.gov/sites/default/files/2026-10/Copy%20of%20TX-RAMP%20Certified%20Cloud%20Products_1.xlsx
+    registrations:
+    - certification_id: TX1081090
+      product: Zscaler Private Access – Government (Zero Trust Exchange – VPN Replacement)
+      registered_vendor: Zscaler
+      certification_level: Provisional
+      cloud_categories:
+      - SaaS
+      certification_path: Certification Due to Existing Other RAMP-Certification
+      expires: null
+      lapsed: false
+      matched_domain: zscaler.com
+      matched_by: domain
+    - certification_id: TX1119648
+      product: Zscaler Internet Access – Government (Secure Web Gateway – vTIC) - High
+      registered_vendor: Zscaler
+      certification_level: Level 2
+      cloud_categories:
+      - SaaS
+      certification_path: Certification Due to Existing Other RAMP-Certification
+      expires: null
+      lapsed: false
+      matched_domain: zscaler.com
+      matched_by: domain
+    - certification_id: TX985597
+      product: Zscaler Internet Access – Government (Secure Web Gateway – vTIC) - High
+      registered_vendor: Zscaler
+      certification_level: Level 2
+      cloud_categories:
+      - SaaS
+      certification_path: Certification Due to Existing Other RAMP-Certification
+      expires: null
+      lapsed: false
+      matched_domain: zscaler.com
+      matched_by: domain
+    - certification_id: TX985598
+      product: Zscaler Internet Access – Government (Secure Web Gateway – vTIC)
+      registered_vendor: Zscaler
+      certification_level: Level 2
+      cloud_categories:
+      - SaaS
+      certification_path: Certification Due to Existing Other RAMP-Certification
+      expires: null
+      lapsed: false
+      matched_domain: zscaler.com
+      matched_by: domain
+    - certification_id: TX985600
+      product: Zscaler Private Access – Government (Zero Trust Networking – VPN Replacement)
+      registered_vendor: Zscaler
+      certification_level: Level 2
+      cloud_categories:
+      - SaaS
+      certification_path: Certification Due to Existing Other RAMP-Certification
+      expires: null
+      lapsed: false
+      matched_domain: zscaler.com
+      matched_by: domain
+    identity: wikidata Q8074786 'Zscaler' P856 http://www.zscaler.com/
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    signal_note: 'certified_products = one entry per cloud category (SaaS / PaaS / IaaS) the vendor holds a TX-RAMP
+      certification in, never per product; products are context, never counted. certification_level = the highest
+      level in that category; lapsed: true when every product in the category is past its expiry date. partner_tier
+      = the highest CURRENT level'
+    certified_products:
+    - product: SaaS
+      product_type: SaaS
+      standard: TX-RAMP
+      certification_level: Level 2
+      lapsed: false
+    detected_by: sweep-tx-ramp-certified-cloud.py
+    detected: '2026-10-22'
+  status: not-a-workflow
+  arazzo: null
+- slug: zscaler-crowdstrike-own
+  label: CrowdStrike (own)
+  partner: crowdstrike
+  partner_name: CrowdStrike (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.crowdstrike.com/listings/zscaler-falcon-foundry-application/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zscaler-microsoft-sentinel-own
+  label: Microsoft Sentinel (own)
+  partner: microsoft-sentinel
+  partner_name: Microsoft Sentinel (own)
+  category: Security - Threat Protection
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://github.com/Azure/Azure-Sentinel/tree/master/Solutions/Zscaler%20Internet%20Access
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zscaler-n8n-n8n-community
+  label: n8n (n8n-community)
+  partner: n8n
+  partner_name: n8n (n8n-community)
+  type: marketplace
+  marketplace: n8n-community
+  channel: partner-built
+  evidence: https://www.npmjs.com/package/@bdzscaler/n8n-nodes-aiguard
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zscaler-okta-own
+  label: Okta (own)
+  partner: okta
+  partner_name: Okta (own)
+  category: Single Sign-On
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.okta.com/integrations/zscalerbyz/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zscaler-ping-identity-own
+  label: Ping Identity (own)
+  partner: ping-identity
+  partner_name: Ping Identity (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.pingone.com/item/zscaler-zidentity-integration-with-pingfederate-oidc
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zscaler-slack-own
+  label: Slack (own)
+  partner: slack
+  partner_name: Slack (own)
+  category: Slack app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://slack.com/marketplace/A022CHL7UJH-zscaler-saas-connector-01
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zscaler-zoom-own
+  label: Zoom (own)
+  partner: zoom
+  partner_name: Zoom (own)
+  category: Zoom app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoom.us/apps/E2WotlutQpWtw2kDbKNEfg
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zscaler-pulumi-pulumi-registry
+  label: Pulumi (pulumi-registry)
+  partner: pulumi
+  partner_name: Pulumi (pulumi-registry)
+  category: infrastructure-as-code provider registry listing
+  type: marketplace
+  marketplace: pulumi-registry
+  channel: partner-built
+  evidence: https://www.pulumi.com/registry/packages/zia/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zscaler-terraform-terraform-registry
+  label: Terraform (terraform-registry)
+  partner: terraform
+  partner_name: Terraform (terraform-registry)
+  category: infrastructure-as-code provider registry listing
+  type: marketplace
+  marketplace: terraform-registry
+  channel: partner-built
+  evidence: https://registry.terraform.io/providers/zscaler/zpa
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zscaler-ansible-ansible-galaxy
+  label: Ansible (ansible-galaxy)
+  partner: ansible
+  partner_name: Ansible (ansible-galaxy)
+  category: configuration-management content listing (Ansible collection)
+  type: marketplace
+  marketplace: ansible-galaxy
+  channel: partner-built
+  evidence: https://galaxy.ansible.com/ui/repo/published/zscaler/zpacloud/
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null

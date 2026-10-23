@@ -34,6 +34,8 @@ checked:
 - https://csrc.nist.gov/projects/cryptographic-module-validation-program/modules-in-process/modules-in-process-list
 - https://csrc.nist.gov/projects/cryptographic-module-validation-program/validated-modules/search/all
 - https://csrc.nist.gov/projects/cryptographic-module-validation-program/validated-modules/search?SearchMode=Advanced&Standard=140-2&CertificateStatus=Historical&ValidationYear=0
+- https://dir.texas.gov/resource-library-item/tx-ramp-certified-cloud-products
+- ansible/integrations/ansible-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: AWS Marketplace
@@ -310,6 +312,216 @@ edges:
     identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
   detected_by: sweep-cloud-security-star.py
   first_seen: '2026-10-20'
+- partner_name: ISMAP
+  partner: null
+  partner_match: register
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.ismap.go.jp/csm?id=cloud_service_list
+  category: Japan government cloud security assessment (ISMAP)
+  contract_reference:
+    register: ISMAP / ISMAP-LIU cloud service lists (www.ismap.go.jp)
+    standard: ISMAP
+    spec_file: null
+    role: ismap-registered
+    registrations:
+    - register_number: C23-0062-2
+      registration_type: ISMAP
+      service: Zscaler Internet Access for Japanese Government
+      registered_name: Zscaler, Inc.
+      service_url: https://www.zscaler.com/products/zscaler-internet-access
+      matched_domain: zscaler.com
+      matched_by: domain
+      evidence_url: https://www.ismap.go.jp/csm?id=cloud_service_list
+      scope_of_statement: https://www.ismap.go.jp/sys_attachment.do?sys_id=c5736a5d83f47a10aa68c6a8beaad3d4
+    - register_number: C23-0063-2
+      registration_type: ISMAP
+      service: Zscaler Private Access for Japanese Government
+      registered_name: Zscaler, Inc.
+      service_url: https://www.zscaler.com/products/zscaler-private-access
+      matched_domain: zscaler.com
+      matched_by: domain
+      evidence_url: https://www.ismap.go.jp/csm?id=cloud_service_list
+      scope_of_statement: https://www.ismap.go.jp/sys_attachment.do?sys_id=c01422dd83f47a10aa68c6a8beaad370
+    signal_note: certified_products = one entry per ISMAP registration TYPE (ISMAP, ISMAP-LIU), never per service;
+      services are context, never counted. The lists carry current registrations only (a filed renewal keeps a registration
+      valid), so lapsed is always false
+    certified_products:
+    - product: ISMAP
+      standard: ISMAP
+      registration_type: ISMAP
+      lapsed: false
+    detected_by: sweep-japan-ismap-tisax-assessments.py
+    detected: '2026-10-22'
+  detected_by: sweep-japan-ismap-tisax-assessments.py
+  first_seen: '2026-10-22'
+- partner_name: CVE Program (CVE Numbering Authorities)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.cve.org/PartnerInformation/ListofPartners/partner/Zscaler
+  category: Vulnerability disclosure (CVE Numbering Authority)
+  contract_reference:
+    register: CVE Program CNA list (github.com/CVEProject/cve-website CNAsList.json @ 239d3d9b68e0)
+    standard: CVE Program CNA Operational Rules (CVE Numbering Authority)
+    spec_file: null
+    role: cve-numbering-authority
+    registered_name: Zscaler, Inc.
+    matched_domain: zscaler.com
+    matched_by: domain
+    cna_id: CNA-2020-0009
+    cna_short_name: Zscaler
+    cna_types:
+    - Vendor
+    cna_roles:
+    - CNA
+    scope: Zscaler issues only.
+    top_level_root: MITRE Corporation
+    root: n/a
+    security_advisories:
+    - https://trust.zscaler.com/security-advisories
+    disclosure_policy:
+    - https://www.zscaler.com/company/vulnerability-disclosure-program
+    country: USA
+    signal_note: listing as a CVE Numbering Authority = participation (a public commitment to assign CVE IDs and
+      publish advisories for its scope); never a count of CVEs
+    detected_by: sweep-vulnerability-disclosure-cna.py
+    detected: '2026-10-22'
+  detected_by: sweep-vulnerability-disclosure-cna.py
+  first_seen: '2026-10-22'
+- partner_name: NIST Cryptographic Module Validation Program (FIPS 140)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://csrc.nist.gov/projects/cryptographic-module-validation-program/validated-modules/search/all
+  category: FIPS 140 cryptographic module validation (NIST / CCCS CMVP)
+  contract_reference:
+    register: 'NIST CMVP validated cryptographic modules (csrc.nist.gov validated-modules search: active + historical)
+      and Modules In Process list'
+    standard: FIPS 140-2 / FIPS 140-3
+    spec_file: null
+    role: fips-140-validated-vendor
+    registered_name: Zscaler Inc.
+    matched_domain: zscaler.com
+    matched_by: domain
+    signal_note: 'certified_products = one entry per (FIPS 140 edition, CMVP module type) held; a pair whose certificates
+      are all on the historical list is lapsed: true; Modules In Process are listing only (in_process), never certified;
+      certificate and module counts are context, never counted'
+    detected_by: sweep-nist-cmvp-fips-140-modules.py
+    detected: '2026-10-22'
+    certified_products:
+    - product: FIPS 140-2 Software cryptographic module
+      product_type: Software
+      standard: FIPS 140-2
+      status: Historical
+      lapsed: true
+      validated: '2022-11-16'
+    - product: FIPS 140-3 Software cryptographic module
+      product_type: Software
+      standard: FIPS 140-3
+      status: Active
+      lapsed: false
+      validated: '2025-10-14'
+    vendor_country: USA
+    identity_source: register website (CMVP certificate Vendor panel)
+  detected_by: sweep-nist-cmvp-fips-140-modules.py
+  first_seen: '2026-10-22'
+- partner_name: TX-RAMP
+  partner: null
+  partner_match: register
+  partner_tier: Level 2
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://dir.texas.gov/resource-library-item/tx-ramp-certified-cloud-products
+  category: Texas state cloud security certification (TX-RAMP)
+  contract_reference:
+    register: TX-RAMP Certified Cloud Products (Texas DIR)
+    standard: TX-RAMP
+    spec_file: null
+    role: tx-ramp-certified
+    register_file: https://dir.texas.gov/sites/default/files/2026-10/Copy%20of%20TX-RAMP%20Certified%20Cloud%20Products_1.xlsx
+    registrations:
+    - certification_id: TX1081090
+      product: Zscaler Private Access – Government (Zero Trust Exchange – VPN Replacement)
+      registered_vendor: Zscaler
+      certification_level: Provisional
+      cloud_categories:
+      - SaaS
+      certification_path: Certification Due to Existing Other RAMP-Certification
+      expires: null
+      lapsed: false
+      matched_domain: zscaler.com
+      matched_by: domain
+    - certification_id: TX1119648
+      product: Zscaler Internet Access – Government (Secure Web Gateway – vTIC) - High
+      registered_vendor: Zscaler
+      certification_level: Level 2
+      cloud_categories:
+      - SaaS
+      certification_path: Certification Due to Existing Other RAMP-Certification
+      expires: null
+      lapsed: false
+      matched_domain: zscaler.com
+      matched_by: domain
+    - certification_id: TX985597
+      product: Zscaler Internet Access – Government (Secure Web Gateway – vTIC) - High
+      registered_vendor: Zscaler
+      certification_level: Level 2
+      cloud_categories:
+      - SaaS
+      certification_path: Certification Due to Existing Other RAMP-Certification
+      expires: null
+      lapsed: false
+      matched_domain: zscaler.com
+      matched_by: domain
+    - certification_id: TX985598
+      product: Zscaler Internet Access – Government (Secure Web Gateway – vTIC)
+      registered_vendor: Zscaler
+      certification_level: Level 2
+      cloud_categories:
+      - SaaS
+      certification_path: Certification Due to Existing Other RAMP-Certification
+      expires: null
+      lapsed: false
+      matched_domain: zscaler.com
+      matched_by: domain
+    - certification_id: TX985600
+      product: Zscaler Private Access – Government (Zero Trust Networking – VPN Replacement)
+      registered_vendor: Zscaler
+      certification_level: Level 2
+      cloud_categories:
+      - SaaS
+      certification_path: Certification Due to Existing Other RAMP-Certification
+      expires: null
+      lapsed: false
+      matched_domain: zscaler.com
+      matched_by: domain
+    identity: wikidata Q8074786 'Zscaler' P856 http://www.zscaler.com/
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    signal_note: 'certified_products = one entry per cloud category (SaaS / PaaS / IaaS) the vendor holds a TX-RAMP
+      certification in, never per product; products are context, never counted. certification_level = the highest
+      level in that category; lapsed: true when every product in the category is past its expiry date. partner_tier
+      = the highest CURRENT level'
+    certified_products:
+    - product: SaaS
+      product_type: SaaS
+      standard: TX-RAMP
+      certification_level: Level 2
+      lapsed: false
+    detected_by: sweep-tx-ramp-certified-cloud.py
+    detected: '2026-10-22'
+  detected_by: sweep-tx-ramp-certified-cloud.py
+  first_seen: '2026-10-22'
 - partner_name: CrowdStrike (own)
   partner: crowdstrike
   partner_match: mirror
@@ -533,127 +745,25 @@ edges:
   badges:
   - Verified publisher (Terraform partner tier)
   - Verified publisher (GitHub domain-verified organization)
-- partner_name: ISMAP
-  partner: null
-  partner_match: register
-  type: contract
-  channel: regulator-register
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://www.ismap.go.jp/csm?id=cloud_service_list
-  category: Japan government cloud security assessment (ISMAP)
-  contract_reference:
-    register: ISMAP / ISMAP-LIU cloud service lists (www.ismap.go.jp)
-    standard: ISMAP
-    spec_file: null
-    role: ismap-registered
-    registrations:
-    - register_number: C23-0062-2
-      registration_type: ISMAP
-      service: Zscaler Internet Access for Japanese Government
-      registered_name: Zscaler, Inc.
-      service_url: https://www.zscaler.com/products/zscaler-internet-access
-      matched_domain: zscaler.com
-      matched_by: domain
-      evidence_url: https://www.ismap.go.jp/csm?id=cloud_service_list
-      scope_of_statement: https://www.ismap.go.jp/sys_attachment.do?sys_id=c5736a5d83f47a10aa68c6a8beaad3d4
-    - register_number: C23-0063-2
-      registration_type: ISMAP
-      service: Zscaler Private Access for Japanese Government
-      registered_name: Zscaler, Inc.
-      service_url: https://www.zscaler.com/products/zscaler-private-access
-      matched_domain: zscaler.com
-      matched_by: domain
-      evidence_url: https://www.ismap.go.jp/csm?id=cloud_service_list
-      scope_of_statement: https://www.ismap.go.jp/sys_attachment.do?sys_id=c01422dd83f47a10aa68c6a8beaad370
-    signal_note: certified_products = one entry per ISMAP registration TYPE (ISMAP, ISMAP-LIU), never per service;
-      services are context, never counted. The lists carry current registrations only (a filed renewal keeps a registration
-      valid), so lapsed is always false
-    certified_products:
-    - product: ISMAP
-      standard: ISMAP
-      registration_type: ISMAP
-      lapsed: false
-    detected_by: sweep-japan-ismap-tisax-assessments.py
-    detected: '2026-10-22'
-  detected_by: sweep-japan-ismap-tisax-assessments.py
-  first_seen: '2026-10-22'
-- partner_name: CVE Program (CVE Numbering Authorities)
-  partner: null
-  partner_match: register
-  type: register
-  channel: standard-directory
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://www.cve.org/PartnerInformation/ListofPartners/partner/Zscaler
-  category: Vulnerability disclosure (CVE Numbering Authority)
-  contract_reference:
-    register: CVE Program CNA list (github.com/CVEProject/cve-website CNAsList.json @ 239d3d9b68e0)
-    standard: CVE Program CNA Operational Rules (CVE Numbering Authority)
-    spec_file: null
-    role: cve-numbering-authority
-    registered_name: Zscaler, Inc.
-    matched_domain: zscaler.com
-    matched_by: domain
-    cna_id: CNA-2020-0009
-    cna_short_name: Zscaler
-    cna_types:
-    - Vendor
-    cna_roles:
-    - CNA
-    scope: Zscaler issues only.
-    top_level_root: MITRE Corporation
-    root: n/a
-    security_advisories:
-    - https://trust.zscaler.com/security-advisories
-    disclosure_policy:
-    - https://www.zscaler.com/company/vulnerability-disclosure-program
-    country: USA
-    signal_note: listing as a CVE Numbering Authority = participation (a public commitment to assign CVE IDs and
-      publish advisories for its scope); never a count of CVEs
-    detected_by: sweep-vulnerability-disclosure-cna.py
-    detected: '2026-10-22'
-  detected_by: sweep-vulnerability-disclosure-cna.py
-  first_seen: '2026-10-22'
-- partner_name: NIST Cryptographic Module Validation Program (FIPS 140)
-  partner: null
-  partner_match: register
-  type: register
-  channel: standard-directory
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://csrc.nist.gov/projects/cryptographic-module-validation-program/validated-modules/search/all
-  category: FIPS 140 cryptographic module validation (NIST / CCCS CMVP)
-  contract_reference:
-    register: 'NIST CMVP validated cryptographic modules (csrc.nist.gov validated-modules search: active + historical)
-      and Modules In Process list'
-    standard: FIPS 140-2 / FIPS 140-3
-    spec_file: null
-    role: fips-140-validated-vendor
-    registered_name: Zscaler Inc.
-    matched_domain: zscaler.com
-    matched_by: domain
-    signal_note: 'certified_products = one entry per (FIPS 140 edition, CMVP module type) held; a pair whose certificates
-      are all on the historical list is lapsed: true; Modules In Process are listing only (in_process), never certified;
-      certificate and module counts are context, never counted'
-    detected_by: sweep-nist-cmvp-fips-140-modules.py
-    detected: '2026-10-22'
-    certified_products:
-    - product: FIPS 140-2 Software cryptographic module
-      product_type: Software
-      standard: FIPS 140-2
-      status: Historical
-      lapsed: true
-      validated: '2022-11-16'
-    - product: FIPS 140-3 Software cryptographic module
-      product_type: Software
-      standard: FIPS 140-3
-      status: Active
-      lapsed: false
-      validated: '2025-10-14'
-    vendor_country: USA
-    identity_source: register website (CMVP certificate Vendor panel)
-  detected_by: sweep-nist-cmvp-fips-140-modules.py
-  first_seen: '2026-10-22'
+- partner_name: Ansible (ansible-galaxy)
+  partner: ansible
+  partner_match: mirror
+  mirror_match: register
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: ansible-galaxy
+  evidence: https://galaxy.ansible.com/ui/repo/published/zscaler/zpacloud/
+  mirror_of: ansible/integrations/ansible-integration-edges.yml
+  apps:
+  - zscaler.zpacloud
+  - zscaler.ziacloud
+  listing_count: 1
+  detected: '2026-10-22'
+  detected_by: mirror-platform-listings.py
+  category: configuration-management content listing (Ansible collection)
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
 source:
 - https://github.com/marketplace?type=apps
